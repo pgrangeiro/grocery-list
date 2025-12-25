@@ -1,11 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <View>
+        <Text style={styles.header}>Grocery List</Text>
+      </View>
+      <View style={styles.inputContainer}>
+        <TextInput placeholder="Insert here an item to shop"></TextInput>
+        <Button title="Add"></Button>
+      </View>
     </View>
   );
 }
@@ -13,8 +17,16 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: 60,
+    paddingHorizontal: 16,
+    backgroundColor: "#fff",
+  },
+  header: {
+    fontSize: 24,
+  },
+  inputContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginVertical: 16,
   },
 });
