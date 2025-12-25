@@ -2,7 +2,6 @@ import { useState } from "react";
 import {
   Button,
   FlatList,
-  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -35,7 +34,9 @@ export default function App() {
       <FlatList
         data={groceryList}
         renderItem={(groceryItem) => (
-          <Text key={groceryItem.index}>{groceryItem.item}</Text>
+          <Text style={styles.listItem} key={groceryItem.index}>
+            {groceryItem.item}
+          </Text>
         )}
       ></FlatList>
     </View>
@@ -56,5 +57,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     marginVertical: 16,
+  },
+  listItem: {
+    marginVertical: 8,
+    padding: 8,
+    backgroundColor: "#c1feffff",
   },
 });
